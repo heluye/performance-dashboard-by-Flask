@@ -1,7 +1,7 @@
 from datetime import datetime
 import pandas as pd
 import numpy as np
-import config
+# import config
 import yaml
 
 
@@ -21,7 +21,7 @@ with open("config.yaml", 'r') as stream:
 
 def Data_transform():
 
-	df_author = pd.read_csv('group member list.csv')
+	df_author = pd.read_csv('group_member_list.csv')
 
 	authorname_list = df_author['Name'].tolist()
 
@@ -31,7 +31,7 @@ def Data_transform():
 	print(time_start)
 	print(time_end)
 
-	df=pd.read_csv('filename.csv')
+	df=pd.read_csv('bitbucket_API_raw_output.csv')
 
 	df['month-date']=df['timestamp'].apply(lambda x: datetime.utcfromtimestamp(int(x/1000)).strftime('%b-%d'))
 
@@ -41,6 +41,6 @@ def Data_transform():
 
 	print(df_new.head())
 	
-	df_temp=df_new[['month-date','author_displayName']].rename(columns={'author_displayName':'author'})
+	df_temp=df_new[['year_month_date','month-date','author_displayName','project','repo']].rename(columns={'author_displayName':'author'})
 
-	df_temp.to_csv('BitBucketDashboardInput.csv')
+	df_temp.to_csv('BitBucketDashboardInput.csv',index=False)
