@@ -53,14 +53,14 @@ def BitBucketAPIcall():
         df_repo = get_commits_from_repo(ENDPOINT2,project,repo)
         df=df.append(df_repo)
 
-    if not os.path.isfile('bitbucket_API_raw_output.csv'):
-        df.to_csv('bitbucket_API_raw_output.csv',index=False)
+    if not os.path.isfile('filename.csv'):
+        df.to_csv('filename.csv',index=False)
 
     else: 
-        df_temp=pd.read_csv('bitbucket_API_raw_output.csv')
+        df_temp=pd.read_csv('filename.csv')
         df=df.append(df_temp)
         df=df.drop_duplicates()
-        df.to_csv('bitbucket_API_raw_output.csv',index=False)
+        df.to_csv('filename.csv',index=False)
 
 
 def construct_url(endpoint):
