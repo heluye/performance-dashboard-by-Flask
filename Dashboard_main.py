@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from build_dashboard import render_dashboard
+# from dashboard import render_dashboard
 from transform import *
 from dashboard import *
 
@@ -34,9 +34,9 @@ def load_dashboard3():
 if __name__ == "__main__":
     print('----------------------------The name is main-----------------------------------------')
 
-    print('                                 ')
-    print('-------------------------------Transforming the data--------------------------------')
-    Data_transform()
+    # print('                                 ')
+    # print('-------------------------------Transforming the data--------------------------------')
+    # Data_transform()
 
     print('                                 ')
     print('-------------------------------Build the dashboard-------------------------------')

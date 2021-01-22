@@ -23,11 +23,11 @@ def Data_transform():
 
 	df_author = pd.read_csv('group_member_list.csv')
 
-	authorname_list = df_author['Name'].tolist()
+	lan_id_list = df_author['LAN ID'].tolist()
 
 	print(df_author.head())
 
-	print(authorname_list)
+	print(lan_id_list)
 	print(time_start)
 	print(time_end)
 
@@ -37,7 +37,7 @@ def Data_transform():
 
 	print(df.head())
 
-	df_new = df[(df['year_month_date']>=time_start) & (df['year_month_date']<=time_end) & (df['author_displayName'].isin(authorname_list))]
+	df_new = df[(df['year_month_date']>=time_start) & (df['year_month_date']<=time_end) & (df['author_name'].isin(lan_id_list))]
 
 	print(df_new.head())
 	

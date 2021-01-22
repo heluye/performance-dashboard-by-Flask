@@ -1,0 +1,13 @@
+
+
+project_list : ['DSAAS']
+
+time_start : '2019-09-20'
+time_end : '2019-10-20'
+
+URL:  'https://adlm.XXX.com/bitbucket/rest/api/1.0'
+ACCESS_TOKEN : 'Bearer XXXXXXX'
+
+
+#WDS，BDS，TMF
+#

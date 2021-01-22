@@ -29,7 +29,7 @@ def Render_dashboard():
     p1.y_range.start = 0
     p1.axis.major_label_text_font_size = "10pt"
 
-
+    print(df_temp.columns)
     df2 =df_temp.groupby(['author','month-date']).size().reset_index().rename(index=str,columns={0:'commits'})
     source = ColumnDataSource(df2)
     colors = list(reversed(['#084594', '#2171b5', '#4292c6', '#6baed6', '#9ecae1', '#c6dbef']))
